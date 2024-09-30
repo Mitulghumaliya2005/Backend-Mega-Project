@@ -1,0 +1,11 @@
+{
+  "name": "backend-project",
+  "version": "1.0.0",
+  "description": "Create Backend Mega Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "Backend"
+  },
+  "author": "Mitul Ghumaliya",
+  "license": "ISC"
+}
