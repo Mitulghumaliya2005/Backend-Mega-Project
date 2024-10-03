@@ -53,6 +53,7 @@ const UserSchema = new mongoose.Schema(
     }
 )
 
+// bcrypt
 UserSchema.pre("save", async function(next){ // next parameter middeleware, save is Event , pre is middleware
     if(this.isModified("password")){
         this.password = bcrypt.hash(this.password, 10)
