@@ -5,11 +5,7 @@ import dotenv from 'dotenv'
 dotenv.config({
     path: './env'
 })
-
-// connectDB()
-
-
-// const app = expess()
+import { app } from "./app.js";
 
 // write code in indexe.js fille
 // 1. professnial
@@ -24,14 +20,21 @@ dotenv.config({
 // })()
 
 // 2. connected to local
-async function main(params) {
-    try {
-        await mongoose.connect('mongodb://127.0.0.1:27017/videotube')
-        console.log("i a,Connected");
-    } catch (err) {
-        console.log("Error in", err)
-    }
-}
+// async function main(params) {
+//     try {
+//         await mongoose.connect('mongodb://127.0.0.1:27017/videotube')
+//         console.log("i a,Connected");
+//     } catch (err) {
+//         console.log("Error in", err)
+//     }
+// }
+// main()
 
-main()
+connectDB().then((response)=>{
+    app.listen(process.env.PORT, ()=>{
+        console.log(`Application Listen On Port ${process.env.PORT}`)
+    })
+}).catch((error)=>{
+    console.log("Error In DB Connection: ", err)
+})
 

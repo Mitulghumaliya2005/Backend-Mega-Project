@@ -20,24 +20,14 @@ import { DB_NAME } from "../constants.js";
 //     }
 // })
 
-// const connectDB = ()=>{
-//     mongoose.connect(`${process.env.MONGODB_URL}`).then(()=>{
-//         console.log("Connected");
-        
-//     }).catch((err)=>{
-//         console.log(err);
-        
-//     })
-// }
-
 
 // connected to local storeg
 const connectDB = async()=>{
     try{
         await mongoose.connect('mongodb://127.0.0.1:27017/videotube')
-        console.log("i am Connected");
+        console.log("DB Connected");
     }catch(err){
-        console.log(err)
+        console.log("Error In DB Connection: ",err)
     }
 }
 
