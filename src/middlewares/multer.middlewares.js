@@ -1,6 +1,6 @@
 import multer from "multer";
 
-// go and read documentions and implement copy and paste
+
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, "./public/temp") 
